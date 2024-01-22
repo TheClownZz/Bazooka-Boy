@@ -1,7 +1,4 @@
 using DG.Tweening;
-using Sirenix.OdinInspector;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -13,7 +10,7 @@ public class Character : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Ragdoll ragdoll;
     [SerializeField] Collider bodyCollider;
-
+    [SerializeField] ParticleSystem bloodFx;
     protected bool isDead;
 
     private void Awake()
@@ -39,6 +36,7 @@ public class Character : MonoBehaviour
     {
         isDead = true;
         anim.Play(die);
+        bloodFx.Play();
         DOVirtual.DelayedCall(0.1f, () =>
         {
             ActiveRagdoll(true);

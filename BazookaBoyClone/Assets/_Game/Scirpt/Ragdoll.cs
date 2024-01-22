@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,10 +16,8 @@ public class Ragdoll : MonoBehaviour
         }
     }
 
-    [Button]
     public void Force(Vector3 force)
     {
-        Debug.LogError(force); 
         foreach(var rb in ragdollRigidList)
         {
             rb.AddForce(force);
