@@ -1,0 +1,12 @@
+.vscode
+Library
+Logs
+Temp
+*.csproj
+*.sln
+obj
+BUILD
+Recordings
+.DS_Store
+.vs/
+apk
